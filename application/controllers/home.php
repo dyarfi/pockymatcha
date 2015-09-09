@@ -1,27 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-// Preset PHP settings
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
-//set_time_limit(30);
-
-//require_once 'application/libraries/IP2Location/IP2Location.php';
-
-// Standard lookup with no cache
-//$loc = new IP2Location('application/libraries/IP2Location/databases/IP-COUNTRY-SAMPLE.BIN', IP2Location::FILE_IO);
-
-
-//$ip = '8.8.8.8';
-
-// Lookup for single field
-//echo 'Country Code: ' . $loc->lookup($ip, IP2Location::COUNTRY_CODE) . '<br />';
-//echo 'Country Name: ' . $loc->lookup($ip, IP2Location::COUNTRY_NAME) . '<br />';
-
-// Lookup for all fields
-//$record = $loc->lookup($ip, IP2Location::ALL);
-
-//echo '<pre>';
-//print_r($record);
-//echo '</pre>';
 
 class Home extends Public_Controller {
 
@@ -29,48 +6,8 @@ class Home extends Public_Controller {
 		parent::__construct();
 		
 		// Load User related model in admin module
-		$this->load->model('admin/Users');
-		$this->load->model('admin/UserProfiles');
-		
-		// Load Setting data
-		$this->load->model('admin/Settings');
-		
-		// Load Career data
-		$this->load->model('career/Careers');
-
-		// Load User related model in admin module
 		$this->load->model('page/Pagemenus');
-		$this->load->model('page/Pages');
-		
-		/*
-		// Load IP2Location Class file without calling the _construct method
-		$this->load->file('application/libraries/IP2Location/ip2location.php');
-		
-		$loc = new IP2Location('application/libraries/IP2Location/databases/IP2LOCATION-LITE-DB11.BIN', IP2Location::FILE_IO);
-		
-		$ip = '139.0.26.20';
-
-		// Lookup for single field
-		echo 'Country Code: ' . $loc->lookup($ip, IP2Location::COUNTRY_CODE) . '<br />';
-		echo 'Country Name: ' . $loc->lookup($ip, IP2Location::COUNTRY_NAME) . '<br />';
-		
-		// Lookup for all fields
-		$record = $loc->lookup($ip, IP2Location::ALL);
-
-		echo '<pre>';
-		print_r($record);
-		echo '</pre>';
-		
-		exit;
-		 * 
-		 */
-		
-		//print_r($this->session->userdata['session_id']);
-		//print_r('<br/>');
-		//print_r($this->session);
-
-		//$this->template->set_theme('default');
-		
+		$this->load->model('page/Pages');	
 		
 	}
 	
@@ -81,7 +18,7 @@ class Home extends Public_Controller {
 		$data['page_title'] = $this->config->item('site_name') .' | '. $this->Settings->getByParameter('title_default')->value;
 		
 		// Set facebook link data
-		$data['vacancies']	= $this->Careers->getAllCareer();
+		$data['vacancies']	= '';
 				
 		// Set facebook link data
 		$data['facebook']	= $this->Settings->getByParameter('socmed_facebook');
@@ -97,9 +34,9 @@ class Home extends Public_Controller {
 		
 		// Set contactus address info data
 		$data['contactus_address']	= $this->Settings->getByParameter('contactus_address');		
-		
-		// Set main template
-		$data['main'] = 'home';
+
+	    // Set main template
+	    $data['main'] 			= 'home';	    
 		
 		// Load site template
 		$this->load->view('template/public/template', $this->load->vars($data));		

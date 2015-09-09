@@ -17,51 +17,51 @@ $config =
 		"providers" => array (
 			// openid providers
 			"OpenID" => array (
-				"enabled" => true
+				"enabled" => false
 			),
 
 			"Yahoo" => array (
-				"enabled" => true,
-                "keys"    => array ( "key" => "dj0yJmk9am95UE81UXJQcFFSJmQ9WVdrOVJYbGFjV0ZDTTJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD01OQ--", "secret" => "ab66f783f93132a8c7349ebd4e8d1e6d993889e5" ),
+				"enabled" => false,
+                "keys"    => array ( "key" => "", "secret" => "" ),
             ),
 
 			"AOL"  => array (
-				"enabled" => true
+				"enabled" => false
 			),
 
 			"Google" => array (
-				"enabled" => true,
-				"keys"    => array ( "id" => "135018674898-re8sd5nigbbuh30p19k8ca3nfv8qbsuk.apps.googleusercontent.com", "secret" => "iNxgUKBfzDtxYxNy0tAXg95U" ),
+				"enabled" => false,
+				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 
 			"Facebook" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "1580264708905709", "secret" => "d03bb9c9d977bfc3dc8f4470e9dc9e7a" ),
+				"keys"    => array ( "id" => "987760097937252", "secret" => "496aab533e508846d860b1621444b008" ),
 			),
 
 			"Twitter" => array (
-				"enabled" => true,
-				"keys"    => array ( "key" => "dqu99PRCefOCpNPobQEvtBJpS", "secret" => "EXOPAceSDF7GNzaLXunByOClXLu0sGVxxAgxbyesLLSfYLcDLv" )
+				"enabled" => false,
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			// windows live
 			"Live" => array (
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 
 			"MySpace" => array (
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			"LinkedIn" => array (
-				"enabled" => true,
-				"keys"    => array ( "key" => "75blw6tuiaom3x", "secret" => "rJMdMWsbpe2ixl9d" )
+				"enabled" => false,
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
 			"Foursquare" => array (
-				"enabled" => true,
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 		),

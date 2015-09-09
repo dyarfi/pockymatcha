@@ -26,14 +26,15 @@ class Public_Controller extends MY_Controller {
         $this->load->model('participant/Participants');
 		
 		// Set default site copyright
+		$this->config->set_item('title_name', $this->Settings->getByParameter('title_name')->value);
 		$this->config->set_item('site_title', $this->Settings->getByParameter('title_default')->value);
 		$this->config->set_item('copyright', $this->Settings->getByParameter('copyright')->value);
 
 		// Set site status default
-		self::getSiteStatus();
+		$this->getSiteStatus();
 		
 		// Set site user access logs
-		self::setAccessLog(1);
+		$this->setAccessLog(1);
 		
 		if($this->config->item('site_open') === FALSE)
         {
@@ -52,7 +53,7 @@ class Public_Controller extends MY_Controller {
 		}
 
 		// Set language from database
-		$this->config->set_item('language', 'english');
+		$this->config->set_item('language', 'indonesia');
 
 		// Set participant session objects
 		//$this->participant = $this->session->userdata('participant');
@@ -93,13 +94,17 @@ class Public_Controller extends MY_Controller {
 			$object = array(
 				'session_id'	=> $this->session_id,
 				'url'			=> base_url(uri_string()),
-				'user_id'		=> @$object['user_id'],	
-				'status_code'	=> $status_code[http_response_code()],	
-				'bytes_served'	=> @$object['bytes_served'],	
+				//'user_id'		=> @$object['user_id'],	
+				'user_id'		=> '',					
+				//'status_code'	=> @$status_code[@http_response_code()],	
+				'status_code'	=> '',	
+				//'bytes_served'	=> @$object['bytes_served'],	
+				'bytes_served'	=> '',	
 				'total_time'	=> $this->benchmark->marker['total_execution_time_start'],	
 				'ip_address'	=> $ip_address,	
 				'geolocation'	=> '',
-				'http_code'		=> http_response_code(),	
+				//'http_code'		=> @http_response_code(),	
+				'http_code'		=> '',	
 				'referrer'		=> ($this->agent->is_referral()) ? $this->agent->referrer() : '',			
 				'user_agent'	=> json_encode($user_agents),
 				'is_mobile'		=> $this->agent->is_mobile,

@@ -1,36 +1,50 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title><?php echo $page_title; ?></title>
-	
-  <!-- Bootstrap Core CSS -->
-  <link href="<?php echo base_url();?>assets/public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="<?php echo base_url();?>assets/public/css/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css">	
-  <!-- Fonts -->
-  <link href="<?php echo base_url();?>assets/public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo base_url();?>assets/public/css/animate.css" rel="stylesheet" />
-  <!-- Squad theme CSS -->
-  <link href="<?php echo base_url();?>assets/public/css/style.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/public/color/default.css" rel="stylesheet">	
-    
-	<link type="text/css" href="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/jquery.jqplot.min.css" rel="stylesheet" media="all" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="defrian.yarfi@d3.dentsu.co.id">
+    <title><?php echo config_item('title_name') . (config_item('site_title') ? ' | '. config_item('site_title') : '');?></title>
+    <!-- Bootstrap Core CSS -->    
+    <link href="<?php echo base_url();?>assets/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/public/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/public/css/animate.css" rel="stylesheet">    
+    <link href="<?php echo base_url();?>assets/public/css/fonts.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/public/css/default.css" rel="stylesheet">
 
-	<script type="text/javascript">
-		var base_URL = '<?php echo base_url();?>';
-	</script>
+    <!-- <link type="text/css" href="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/jquery.jqplot.min.css" rel="stylesheet" media="all" /> -->
+
+    <script type="text/javascript">
+      var base_URL = '<?php echo base_url();?>';
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-	
-	<div id="wrapper">
-		
-			<?php $this->load->view('template/public/header'); ?>
-	
-			<div id="navigation">
-				<?php $this->load->view('template/public/navigation'); ?>
-			</div>
-		
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">	
+<div id="fb-root"></div>
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+<script>
+FB.init({
+    appId : '987760097937252',
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml : true // parse XFBML
+});
+window.onload = function() { FB.Canvas.setSize({ width: 810, height: 900 }); }
+</script>
+	<div id="wrapper">		
+      <div id="navigation">
+        <?php $this->load->view('template/public/navigation'); ?>
+      </div>
+			<?php $this->load->view('template/public/header'); ?>		
 			<div id="main">
 				<div class="messageFlash">
 					<?php $this->load->view('flashdata'); ?>
@@ -39,17 +53,15 @@
 					<?php $this->load->view($main); ?>
 				</div>
 			</div>
-	
-	<?php $this->load->view('template/public/footer'); ?>
-		
+      <?php $this->load->view('template/public/footer'); ?>      	
 	</div>    
-	
 	<!-- Core JavaScript Files -->
   <script src="<?php echo base_url();?>assets/public/js/jquery.min.js"></script>	
   <script src="<?php echo base_url();?>assets/public/js/jquery.fancybox.pack.js"></script>    
 	<script src="<?php echo base_url();?>assets/public/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url();?>assets/public/js/jquery.easing.min.js"></script>	
 	<script src="<?php echo base_url();?>assets/public/js/jquery.scrollTo.js"></script>
+  <script src="<?php echo base_url();?>assets/public/js/TweenMax.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/imagesloaded.pkgd.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/jquery.jqplot.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/plugins/jqplot.pieRenderer.min.js"></script>
@@ -57,7 +69,7 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/circle-progress.js"></script>
     
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url();?>assets/public/js/custom.js"></script>
+<script src="<?php echo base_url();?>assets/public/js/default.js"></script>
 <script>
 $(document).ready(function() {
     $('.col-md-6 .alert.alert-danger').fadeIn('slow');
