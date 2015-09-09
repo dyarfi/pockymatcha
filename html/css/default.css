@@ -1,7 +1,7 @@
 
 html { text-rendering: optimizeLegibility; font-smoothing: antialiased; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
 body {	
-	background: transparent url('../img/bg.jpg') left top repeat; 
+	background: transparent url('../img/bg.jpg') repeat left top / 5% auto; 
 	color: #129549;
 }
 .header {
@@ -90,6 +90,12 @@ a.terms {
 	vertical-align: top;
 	margin-top: 7px;
 } 
+.form-quiz-pocky button:hover {
+	color: green;
+	-webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.8);
+}
 .form-quiz-pocky .btn-default { 
 	background: rgba(253,255,245,1);
 	background: -moz-linear-gradient(top, rgba(253,255,245,1) 0%, rgba(253,255,245,1) 5%, rgba(210,255,82,1) 18%, rgba(145,232,66,1) 88%, rgba(97,194,6,1) 100%);
