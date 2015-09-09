@@ -1,0 +1,123 @@
+/* Template-specific stuff
+*
+* Customizations just for the template; these are not necessary for anything
+* with disabling the responsiveness.
+*/
+
+/* Account for fixed navbar */
+body {
+  margin: 0;
+  background: #fff url(../img/bg-body.jpg) center;
+  font-family: 'ostrich_sansblack';
+  font-size: 2vh;
+}
+.container{width: 50%}
+.title-page-matcha{
+  font-family: 'mkabelregular';
+  text-align: center;
+
+  text-shadow:
+    -2px -2px 0 #b1f0b7,
+    -2px -1px 0 #b1f0b7,
+    -2px 0px 0 #b1f0b7,
+    -2px 1px 0 #b1f0b7,
+    -2px 2px 0 #b1f0b7,
+    -1px -2px 0 #b1f0b7,
+    -1px -1px 0 #b1f0b7,
+    -1px 0px 0 #b1f0b7,
+    -1px 1px 0 #b1f0b7,
+    -1px 2px 0 #b1f0b7,
+    0px -2px 0 #b1f0b7,
+    0px -1px 0 #b1f0b7,
+    0px 0px 0 #b1f0b7,
+    0px 1px 0 #b1f0b7,
+    0px 2px 0 #b1f0b7,
+    1px -2px 0 #b1f0b7,
+    1px -1px 0 #b1f0b7,
+    1px 0px 0 #b1f0b7,
+    1px 1px 0 #b1f0b7,
+    1px 2px 0 #b1f0b7,
+    2px -2px 0 #b1f0b7,
+    2px -1px 0 #b1f0b7,
+    2px 0px 0 #b1f0b7,
+    2px 1px 0 #b1f0b7,
+    2px 2px 0 #b1f0b7;
+  color: #129549;
+}
+h3.title-page-matcha{text-align: left;}
+.form-area{
+  font-family: 'ostrich_sansblack';
+  color: #129549;
+  text-transform: uppercase;
+}
+input[type="checkbox"], input[type="radio"]{margin-right: 8px;}
+.button-quiz{
+  margin: 40px auto;
+  text-align: center;
+}
+form h3{
+  margin-top: 100px;
+}
+.btn-primary{
+  background: rgba(229,255,168,1);
+  background: -moz-linear-gradient(top, rgba(229,255,168,1) 0%, rgba(114,195,0,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(229,255,168,1)), color-stop(100%, rgba(114,195,0,1)));
+  background: -webkit-linear-gradient(top, rgba(229,255,168,1) 0%, rgba(114,195,0,1) 100%);
+  background: -o-linear-gradient(top, rgba(229,255,168,1) 0%, rgba(114,195,0,1) 100%);
+  background: -ms-linear-gradient(top, rgba(229,255,168,1) 0%, rgba(114,195,0,1) 100%);
+  background: linear-gradient(to bottom, rgba(229,255,168,1) 0%, rgba(114,195,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ffa8', endColorstr='#72c300', GradientType=0 );
+  border-color: #a4fc29;
+  color: #3a3a3a;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.btn-primary:hover{border-color: #a4fc29;}
+a {color: #3a3a3a;}
+/*--------------------------*/
+/*--- CUSTOM RADIO BUTTON ---*/
+/*--------------------------*/
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  color: #ee4c9b;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+input[type="radio"] + label span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+input[type="radio"] + label span {
+  background-color: #fff;
+  -webkit-box-shadow: inset -1px 1px 3px 0px rgba(0,0,0,0.51);
+  -moz-box-shadow: inset -1px 1px 3px 0px rgba(0,0,0,0.51);
+  box-shadow: inset -1px 1px 3px 0px rgba(0,0,0,0.51);
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #b1f0b7;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+
+
+@media (min-width:320px) and (max-width: 980px){
+  .container{width: 80%}
+}
