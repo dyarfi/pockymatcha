@@ -73,6 +73,11 @@ form h3{
   font-weight: bold;
 }
 .btn-primary:hover{border-color: #a4fc29;}
+.btn-edho{
+  background: grey;
+  border-color: transparent;
+}
+.btn-edho:hover{border-color: grey;}
 a {color: #3a3a3a;}
 /*--------------------------*/
 /*--- CUSTOM RADIO BUTTON ---*/
@@ -121,3 +126,14 @@ input[type="radio"]:checked + label span {
 @media (min-width:320px) and (max-width: 980px){
   .container{width: 80%}
 }
+
+.img-ctr{
+  margin: auto;
+  display: block;
+}
+.note-foot{
+  width: 80%;
+  margin: auto;
+}
+.edho{color: #d5ee4c;}
+.thalita{color: #ee4c9b;}
