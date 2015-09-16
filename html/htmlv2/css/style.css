@@ -55,9 +55,9 @@ input[type="checkbox"], input[type="radio"]{margin-right: 8px;}
   margin: 40px auto;
   text-align: center;
 }
-form h3{
+/*form h3{
   margin-top: 100px;
-}
+}*/
 .btn-primary{
   background: rgba(229,255,168,1);
   background: -moz-linear-gradient(top, rgba(229,255,168,1) 0%, rgba(114,195,0,1) 100%);
@@ -96,7 +96,7 @@ input[type="radio"] + label span {
   display: inline-block;
   width: 19px;
   height: 19px;
-  margin: -1px 4px 0 0;
+  margin: -1px 4px 0 -23px;
   vertical-align: middle;
   cursor: pointer;
   -moz-border-radius: 50%;
@@ -134,6 +134,7 @@ input[type="radio"]:checked + label span {
 .note-foot{
   width: 80%;
   margin: auto;
+  font-size: 26px;
 }
 .edho{color: #d5ee4c;}
 .thalita{color: #ee4c9b;}
