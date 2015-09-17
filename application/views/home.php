@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-<div class="row-fluid">    
+<div class="container-fluid">    
   	<div class="col-md-12">
 		<div class="page-header">  	
 		    <?php if (!empty($progress)) { ?> 
@@ -19,7 +19,7 @@
 				  <?php 
 				  $i=1;
 				  foreach($questionnaires as $questionnaire) { ?>
-			      	<div class="row-fluid">
+			      	<div class="container-fluid">
 						<h1><?php echo $questionnaire->questionnaire_text;?></h1>
 						<ul class="list-inline">
 						<?php foreach ($questions as $question) { 
@@ -27,15 +27,12 @@
 						  if ($questionnaire->id === $question->questionnaire_id) { ?>
 						  <li>
 						    <div class="text-center">
-					    		<label for="<?php echo $question->id;?>">
-				    			<?php if ($question->file_name) { ?>
+					    		<?php if ($question->file_name) { ?>
 				    			<div class="center-block">
 					    			<img style="height:190px;margin:0 auto 10px auto;" src="<?php echo base_url('uploads/questionnaire/questions/'.$question->file_name);?>" class="img-thumbnail"/>
-					    		</div>					    		
+					    		</div>
 					    		<?php } ?>
-			  					<input type="radio" <?php echo ($fields['qrid_'.$question->questionnaire_id] == 'qsid_'.$question->id ? 'checked="checked"' : '');?> name="qrid_<?php echo $questionnaire->id;?>" value="qsid_<?php echo $question->id;?>" id="qsid_<?php echo $question->id;?>"/>
-			  					<?php echo preg_replace('/(\D+.\:)/','',strip_tags($question->question_text));?>
-			  					</label>
+			  					<input type="radio" <?php echo ($fields['qrid_'.$question->questionnaire_id] == 'qsid_'.$question->id ? 'checked="checked"' : '');?> name="qrid_<?php echo $questionnaire->id;?>" value="qsid_<?php echo $question->id;?>"/><h3><?php echo preg_replace('/(\D+.\:)/','',$question->question_text);?></h3>
 						    </div>
 						    <?php //echo $errors['qrid_'.$question->questionnaire_id]; ?>
 						  </li>
@@ -55,7 +52,7 @@
 					  </div>
 					</div>
 			    </form>  
-			</div>
+				</div>
 			<?php } else { ?>
 			<div class="page-header">	
 				<h1>Hooray, you're done!!!! <small>Thanks for participating!</small></h1>

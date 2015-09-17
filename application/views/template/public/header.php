@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 	<!-- Preloader -->
-	<!--div id="preloader">
+	<div id="preloader">
 	  <div id="load"></div>
-	</div-->
+	</div>
     <div class="header">
         <div class="bg-header">
             <div class="img-holder visible-lg visible-md visible-sm">

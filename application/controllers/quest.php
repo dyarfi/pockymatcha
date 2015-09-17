@@ -35,7 +35,7 @@ class Quest extends Public_Controller {
 
 	public function index() {
 			// DATA MAIN SETUP
-			$questionnaire_done = $this->QuestionnaireCompleted->getUserCompletedQuestionnaire($this->participant->id);
+			$questionnaire_done 	= $this->QuestionnaireCompleted->getUserCompletedQuestionnaire($this->participant->id);
 		    
 		    // Load session id
 		    $data['participant'] 	= base64_encode($this->session->userdata('session_id'));

@@ -81,6 +81,7 @@ $route[$admin.'/pagemenu/(:any)']	= 'page/pagemenu/$1';
 
 $route[$admin.'/questionnaire/(:any)']		= 'questionnaire/$1';
 $route[$admin.'/question/(:any)']			= 'questionnaire/question/$1';
+$route[$admin.'/questionrule/(:any)']		= 'questionnaire/questionrule/$1';
 $route[$admin.'/questionuseranswer/(:any)']	= 'questionnaire/questionuseranswer/$1';
 
 // Participant and Attachment Routes
@@ -97,8 +98,8 @@ $route[$admin.'/participant_answer/(:any)']		= 'participant/participant_answer/$
 */
 
 $route['default_controller'] = 'home';
-//$route['(:any)']			 = 'home/menu/$1';
-//$route['(:any)/page/(:any)'] = 'home/page/$1/$2';
+$route['read/(:any)']        = 'home/read/$1';
+$route['(:any)/view/(:any)'] = 'home/view/$1/$2';
 $route['download/(:num)']	 = 'download';
 $route['404_override']		 = '';
 

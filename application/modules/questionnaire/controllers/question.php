@@ -31,6 +31,7 @@ class Question extends Admin_Controller {
         try {
             $crud = new grocery_CRUD();
             $crud->set_table('tbl_questions');
+            $crud->order_by('questionnaire_id','asc');
             $crud->set_subject('List Questions');
             $crud->columns('question_text', 'questionnaire_id','status');                      
 

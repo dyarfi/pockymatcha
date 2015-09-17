@@ -43,36 +43,43 @@ class Home extends Public_Controller {
 		
 	}
 	
-	public function menu ($menu='') {
-		
+	public function read ($post='') {
+
+		// Set menus data
+		$menu           = $this->Pagemenus->getMenu($post);
+
 		// Set menu data
-		$data['menu'] = $menu;
-		
-		// Set pages data
-		$data['pages'] = $this->Pagemenus->getPagesByMenu($menu);
-		//exit('asdf');
+		$data['menu']   = $this->Pagemenus->getMenu($post);
+
+		// Set menus data
+		$data['pages']  = $this->Pagemenus->getPagesByMenu($post);
+
 		// Set main template
-		$data['main'] = 'home';
-		
+		$data['main']   = $this->mobile.'page';
+
 		// Load admin template
-		$this->load->view('page', $this->load->vars($data));
+		$this->load->view('template/public/template', $this->load->vars($data));
 	}
-	
-	public function page ($menu='',$page='') {
-		
+
+	public function view ($post='',$page='') {
+
+		// Set menus data
+		$menu = $this->Pagemenus->getMenu($post);
+
 		// Set menu data
-		$data['menu'] = $menu;
-		
+		$data['menu']   = $this->Pagemenus->getMenu($post);
+
+		// Set menus data
+		$data['pages']  = $this->Pagemenus->getPagesByMenu($post);
+
 		// Set pages data
-		$data['page'] = $this->Pages->getPageByName($page);
-		
-		//print_r($data['pages']);
-		
+		$data['page']   = $this->Pages->getPageByUrl($page);
+
 		// Set main template
-		//$data['main'] = 'page';
-		
+		$data['main']   = $this->mobile.'page_detail';
+
 		// Load admin template
-		$this->load->view('page_detail', $this->load->vars($data));
+		$this->load->view('template/public/template', $this->load->vars($data));
 	}
 }
 

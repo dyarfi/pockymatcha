@@ -26,8 +26,10 @@ class Questionnaires Extends CI_Model {
                 
                 $sql	= 'CREATE TABLE IF NOT EXISTS `'.$this->table.'` ('
 				. '`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, '
-				. '`name` VARCHAR(255) NULL, '
+				. '`type` INT(11) NULL, '
+                . '`name` VARCHAR(255) NULL, '
 				. '`questionnaire_text` TEXT NULL, '
+                . '`value` VARCHAR(12), '
                 . '`help_text` TEXT NULL, '
 				. '`file_name` VARCHAR(512) NULL, '
 				. '`order` TINYINT(3) NULL, '
@@ -95,7 +97,8 @@ class Questionnaires Extends CI_Model {
 
 		// Set Questionnaire data
 		$data = array(			
-			'name'				 => $object['name'],
+            'type'               => $object['type'],
+            'name'				 => $object['name'],
 			'questionnaire_text' => $object['questionnaire_text'],
             'help_text'     => $object['help_text'],
             'file_name'		=> $object['file_name'],

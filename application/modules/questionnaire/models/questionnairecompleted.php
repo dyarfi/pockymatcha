@@ -28,6 +28,7 @@ class Questionnairecompleted Extends CI_Model {
 				. '`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, '
 				. '`participant_id` INT(11) NULL , '
 				. '`questionnaire_id` INT(11) NULL , '	
+				. '`text` TEXT NULL , '	
 				. '`date_completed` INT(11) NULL , '	
 				. '`status` TINYINT(1) NULL DEFAULT 1, '
 				. '`added` INT(11) NULL, '
@@ -118,6 +119,7 @@ class Questionnairecompleted Extends CI_Model {
 			}
 			return true;
 		}
+		
 		/*
 		// Set Questionnairecompleted data
 		$data = array(			

@@ -196,7 +196,8 @@ $config['modulelist'] = array(
 		// Questionnaire module menus
 		'module_menu'	=> array(
 						'questionnaire/index'	=> 'Questionnaires',
-						'question/index'		=> 'Questions'
+						'question/index'		=> 'Questions',
+						'questionrule/index'	=> 'Question Rule'
 						),
 		// Questionnaire module functions
 		'module_function'	=> array(
@@ -215,7 +216,15 @@ $config['modulelist'] = array(
 						'question/index/delete'	=> 'Delete Question',
 						'question/index/change'	=> 'Change Question Status',
 						'question/index/export'	=> 'Export Question',
-						'question/index/print'	=> 'Print Question'
+						'question/index/print'	=> 'Print Question',
+						// Question rule functions
+						'questionrule/index/add'	=> 'Add Question Rule',
+						'questionrule/index/view'	=> 'View Question Rule',
+						'questionrule/index/edit'	=> 'Edit Question Rule',
+						'questionrule/index/delete'	=> 'Delete Question Rule',
+						'questionrule/index/change'	=> 'Change Question Rule Status',
+						'questionrule/index/export'	=> 'Export Question Rule',
+						'questionrule/index/print'	=> 'Print Question Rule',
 						),
 	),
     // Participant Module

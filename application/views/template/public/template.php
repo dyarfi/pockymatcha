@@ -62,14 +62,13 @@ window.onload = function() { FB.Canvas.setSize({ width: 810, height: 900 }); }
   <script src="<?php echo base_url();?>assets/public/js/jquery.easing.min.js"></script>	
 	<script src="<?php echo base_url();?>assets/public/js/jquery.scrollTo.js"></script>
   <script src="<?php echo base_url();?>assets/public/js/TweenMax.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/imagesloaded.pkgd.min.js"></script>
+  <script src="<?php echo base_url();?>assets/public/js/jquery.viewportchecker.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/jquery.jqplot.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/plugins/jqplot.pieRenderer.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/jquery.jqplot.1.0.8/plugins/jqplot.json2.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/circle-progress.js"></script>
-    
-<!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url();?>assets/public/js/default.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/public/js/circle-progress.js"></script> 
+  <!-- Custom Theme JavaScript -->
+  <script src="<?php echo base_url();?>assets/public/js/default.js"></script>
 <script>
 $(document).ready(function() {
     $('.col-md-6 .alert.alert-danger').fadeIn('slow');
@@ -79,7 +78,7 @@ $(document).ready(function() {
      *   - listening to `circle-animation-progress` event and display the animation progress: from 0 to 100%
      */
     $('.second.circle').circleProgress({
-      value: '<?php echo $progress == $questionnaire_count ? "1" : "0.".$progress * 100 / $questionnaire_count;?>'
+      value: '<?php echo $progress == $questionnaire_count ? "1" : "0.".round($progress * 100 / $questionnaire_count)?>'
     }).on('circle-animation-progress', function(event, progress) {
       $(this).find('strong').html(parseInt(<?php echo $progress ? $progress : 0;?> * 100 / <?php echo $questionnaire_count ? $questionnaire_count : 0;?>) + '<i>%</i>');
     });
